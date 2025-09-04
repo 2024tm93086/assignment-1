@@ -41,3 +41,5 @@ jobs:
         VERSION=latest
         docker build -t $IMAGE:$VERSION .
         docker push $IMAGE:$VERSION
+    - name: Deploy via webhook
+      run: curl -X GET "${{ secrets.DEPLOY_HOOK_URL }}"
