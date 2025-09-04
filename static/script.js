@@ -27,6 +27,12 @@ const addWorkout = (event) => {
 };
 
 const renderWorkout = (data) => {
+  if (data.length > 0) {
+    const table = document.querySelector("#workout-table");
+    const noDataText = document.querySelector("#no-data-text");
+    table.classList.remove("d-none");
+    noDataText.classList.add("d-none");
+  }
   const tableFragment = document.createDocumentFragment();
   data.forEach((row, index) => {
     const tableRow = document.createElement("tr");

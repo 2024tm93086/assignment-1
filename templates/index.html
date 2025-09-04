@@ -57,7 +57,7 @@
         <div class="d-flex flex-column flex-1">
           <div>
             <h1 class="text-center">Workout List</h1>
-            <table class="table table-striped">
+            <table class="table table-striped d-none" id="workout-table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -67,6 +67,7 @@
               </thead>
               <tbody id="workout-list"></tbody>
             </table>
+            <p id="no-data-text" class="text-center mt-3">No workout added.</p>
           </div>
         </div>
       </div>
