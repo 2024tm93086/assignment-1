@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-
 workouts = []
 
 
@@ -21,7 +20,7 @@ def add_workout():
             return {
                 "error": "Duration must be a number."
             }, 400
-    except:
+    except Exception as err:
         return {
             "error": "Please enter both workout and duration."
         }, 400

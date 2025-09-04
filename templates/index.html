@@ -3,9 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ACE Fitness and Gym</title>
+    <title>ACEestFitness and Gym</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="d-flex flex-column vh-100 container">
+      <h1 class="text-center">Workout tracker for ACEestFitness and Gym</h1>
+      <div class="d-flex flex-row flex-fill mt-5 column-gap-5">
+        <div class="d-flex flex-column flex-1">
+          <h1 class="text-center">Add Workout</h1>
+          <div>
+            <form onsubmit="addWorkout(event)">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Workout:</label
+                >
+                <input
+                  name="workout"
+                  type="text"
+                  class="form-control"
+                  id="workout"
+                  placeholder="Workout:"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Duration (minutes):</label
+                >
+                <input
+                  name="duration"
+                  type="text"
+                  class="form-control"
+                  id="duration"
+                  placeholder="Duration (minutes):"
+                />
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-auto mb-3">
+                  <button type="submit" class="btn btn-primary">
+                    Add Workout
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-1">
+          <div>
+            <h1 class="text-center">Workout List</h1>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Workout</th>
+                  <th scope="col">Duration (minutes)</th>
+                </tr>
+              </thead>
+              <tbody id="workout-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popups -->
+    <div
+      class="toast align-items-center text-bg-success border-0"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="d-flex">
+        <div class="toast-body">Success Toast</div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+    <div
+      class="toast align-items-center text-bg-warning border-0"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="d-flex">
+        <div class="toast-body">Error Toast</div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/script.js"></script>
   </body>
 </html>
