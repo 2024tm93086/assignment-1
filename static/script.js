@@ -38,8 +38,8 @@ const renderWorkout = (data) => {
     const workoutColumn = document.createElement("td");
     workoutColumn.innerText = row.workout;
     tableRow.appendChild(rowHead);
-    tableRow.appendChild(durationColumn);
     tableRow.appendChild(workoutColumn);
+    tableRow.appendChild(durationColumn);
     tableFragment.appendChild(tableRow);
   });
   const list = document.querySelector("#workout-list");
