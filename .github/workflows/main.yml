@@ -38,6 +38,6 @@ jobs:
     - name: Build and push Docker image
       run:  |
         IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/assignment-1
-        VERSION=v${{ github.run_number }}
+        VERSION=latest
         docker build -t $IMAGE:$VERSION .
         docker push $IMAGE:$VERSION
